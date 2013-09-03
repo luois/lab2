@@ -8,4 +8,7 @@
  */
 $expire = 365*24*3600;
 setcookie("nickname","xeros",time()+$expire);
+
 ?>
+
+<p>salut test</p>
