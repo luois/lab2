@@ -21,6 +21,10 @@ while (!feof($fp))
 echo 'Voici les pays :</br>'.$affiche;
 fclose($fp);
 ?>
+<html>
+    <img src="http://www.battlefield-quebec.com/wp-content/gallery/battlefield-3/1.jpg"width="1280"height="720">
+</html>
+
 
 </body>
 
