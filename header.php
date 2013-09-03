@@ -9,21 +9,37 @@
 $nomcookie=$_REQUEST["nom"];
 setcookie("Monster",$nomcookie,time()+(40)); //365*24*3600  //= 1 an
 ?>
+
+
+/*** Module cookie
 <HTML>
 <HEAD>
-    <TITLE>Fichier de test de COOKIE</TITLE>
+    <TITLE>Fichier de test</TITLE>
 </HEAD>
 <BODY>
 <CENTER>
-    Cookie manger le:
     <?php
-
-    $date = date("d-m-Y");
-    echo "$date";
-
+    if ($_SESSION['equipe'] )//== "Vive les Steelers!!!")
+    {
+        echo "Affichage de la variable session: ";
+        echo $_SESSION['equipe'];
+        echo "<BR><A HREF='ouverturesession.php.php'>Fermer la session</A><BR>";
+    }
+    else
+    {
+        echo "Variable session inexistante!!!";
+    }
     ?>
-    <P><A HREF="cookie2.php">Lien vers cookie2.php:</A><P>
-        <IMG SRC="cookie.gif" border =0">
+    <BR>
+    <A HREF="ouverturesession.php.php">...Page precedante</A>
+
+    <form method="post" action="cookie1.php">
+        <p>Donnez un nom au cookie "Monster":</p>
+        nom :
+        <input type="text" name="nom" size="40">
+        </p>
+        <input type="submit" name="Submit" value="R-envoyer">
+    </form>
 </CENTER>
 </BODY>
 </HTML>
