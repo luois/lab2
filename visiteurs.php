@@ -9,10 +9,12 @@
  * To change this template use File | Settings | File Templates.
  */
 
+popup();
+
 $fp = fopen("pays.txt","r");
 while (!feof($fp))
     {
-        $page = fgets($fp, 4096); //lecture du contenue de la ligne
+        $page = fgets($fp, 4096); //lecture du contenu de la ligne
         $affiche .= $page;
         $affiche .= '</br>';
     }
@@ -21,3 +23,14 @@ fclose($fp);
 ?>
 
 </body>
+
+<?
+    Function popup()
+    {
+        If (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
+        {
+            echo '<script>alert ("Vous utilisez Internet explorer")</script>';
+        }
+    }
+
+?>
