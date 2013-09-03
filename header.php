@@ -11,4 +11,4 @@ setcookie("nickname","xeros",time()+$expire);
 
 ?>
 
-<p>salut test</p>
+<p>salut</p>
