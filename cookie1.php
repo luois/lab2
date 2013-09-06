@@ -8,4 +8,4 @@
  */
 ?>
 
-<h1>salut cookie page</h1>
+<h1>salut cookie page salut</h1>
