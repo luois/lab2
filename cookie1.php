@@ -1,39 +1,31 @@
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<head><h2>Voici la fonctionnalité cookie</h2></head>
-<boby>
+<?php
+$pseudo = $_REQUEST["pseudo"];
+$nom = $_REQUEST["nom"];
+$prénom = $_REQUEST["prénom"];
+$sexe = $_REQUEST["sexe"];
+$nomcookie =$_REQUEST["pseudo"];
+setcookie("Pseudo", $nomcookie, time()+3600);
+?>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<html>
+<head><title>Voici la fonctionnalité cookie</title></head>
+<BODY>
+<div style="text-align: center;">
+    Cookie créé le :
     <?php
-        if (isset ($_POST["connexion"]))
-        {
-            $nom=ADDSLASHES($_POST['nom']);
-            $password=$_POST['mot_passe'];
-            setcookie ('ybet','connexion',time()+3600);
-// on crée le cookie en cas de connexion
-        }
-    } ?>
-
-    <head>
-        <!-- contenu du header -->
-        if(!isset($_COOKIE['ybet']))
-        {
-        setcookie('ybet','site',time()+3600);
-        Print ("Première visite <br>");
-        }else{
-        Print ("Vous avez déjà visité la page<br>");
-
-        echo $_COOKIE['ybet']."<br>";
-        }
-    </head>
-
-    <body>
-    // le contenu affiché
-
-    <form>
-        // le formulaire de connexion (login)
-    </form>
-
-    // suite du contenu affiché
-
-    </body>
-
-</boby>
+    $date = date("d-m-Y");
+    echo "$date";
+    if($_COOKIE['pseudo']&& $pseudo!="" && $nom !=""&& $prénom !=""&& $sexe!="")
+    {
+        echo '<br>Bienvenue '. $sexe.' '.$prénom.' '.$nom;
+    }
+    else
+    {
+        echo 'le cookie nesiste pas';
+        header("refresh: 3; url=vérification.html");
+    }
+    ?>
+</div>
+</BODY>
+</HTML>
 
